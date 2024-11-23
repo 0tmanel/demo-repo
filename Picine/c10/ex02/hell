@@ -1,0 +1,14 @@
+hello, my name is othman , i am using this file to test 
+my program which function mainly about imitating the behavour of the system command tail
+this command is about displaying the last line of the file given as argument
+we have also another option which is -c , this option is used to disply the last characters
+displyed , therefor i am going to look for a way how to do this 
+the behavour of the command tail is that it disply the last ten 
+lines in a file by default 
+therefor we need to see an algorithm to solve this problem 
+also how to show the last specified characters
+because we are asked to handle this option
+as for the makefile, it is super  easy 
+now we are at the last line in the file 
+because we want to test our program 
+take care of yourself
