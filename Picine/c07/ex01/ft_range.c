@@ -33,7 +33,7 @@ int main ()
     }
     
 }*/
- int *ft_range(int min, int max)
+ /*int *ft_range(int min, int max)
  {
     int *range = malloc(max - min * sizeof(int));
     if(range == NULL)
@@ -66,4 +66,38 @@ int main ()
     i++;
    }
 
-}
+}*/
+
+ int *ft_range(int min, int max)
+ {
+    int len = max - min;
+    int *arr = malloc((len ) * sizeof(int));
+    if(arr == NULL)
+    {
+        return NULL;
+    }
+    if (min > max || min == max)
+    {
+        return NULL;
+    }
+    int  i = 0;
+    while(min < max)
+    {
+        arr[i] = min;
+        i++;
+        min++;
+        //if you used arr++ and returned arr it will not work 
+    }
+    return arr;
+ }
+ int main()
+ {
+    int min = 2;
+    int max = 9;
+    int *arr = ft_range(min, max);
+    while (*arr)
+    {
+        printf("%d\n", *arr);
+        arr++;
+    }
+ }
