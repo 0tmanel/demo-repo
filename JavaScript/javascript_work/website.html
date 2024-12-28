@@ -2,14 +2,15 @@
 <!--the html element represent the entire web 
 page-->
 <html>
-
+<!--we begin by html, it creates the web page-->
 <head>
     <title>HTML CSS Review</title>
     <style>
         /*the head contains information about the page-->*/
+
+        
         /*this is called CSS selector, 
-          select the element to change*/
-        .blue-button {
+          select the element to change*/.blue-button {
             /*this is CSSproperty*/
             background-color: blue;
             color: black;
@@ -27,7 +28,10 @@ page-->
 </head>
 
 <body><!--body contains everything that is visible on the page-->
-    <button title="good job" class="blue-button">
+    <button title="good job" class="blue-button"
+   onclick="
+   alert('good job');
+   " >
         <!--a tooltip is when we hover over something and some text shows up-->
         hello
     </button> <!--this code tell the competer to create a button-->
@@ -41,6 +45,12 @@ page-->
             while the one </button> is called closing tag-->
 
     <!--in html spaces and newline does not have any affect -->
+    <script> 
+    //this is a javascript code to show a pop up in the web page
+    //usally we use JS code at the bottom, because we want to create the web page first 
+        alert('hello')
+        //we can run JS code in script element and oncklic attrubiute
+    </script>
 </body>
 
 </html>
