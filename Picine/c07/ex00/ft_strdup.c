@@ -94,7 +94,9 @@ int ft_len(char *src)
   strdup[i] = '\0';
   
   return strdup;
-  //The pointer strdup will point to the first character ('h'), not the null terminator ('\0'). When you return strdup from the function, you are returning the address of the first character of this memory block, which is strdup[0].
+  //The pointer strdup will point to the first character ('h'), not the null terminator ('\0').
+  // When you return strdup from the function, you are returning 
+  //the address of the first character of this memory block, which is strdup[0].
 
   }
   int main()
@@ -109,4 +111,5 @@ int ft_len(char *src)
     printf("\n");
     
   }
-//If you call free() on a pointer that was never allocated by one of these functions (or has already been freed), the behavior is undefined.
+//If you call free() on a pointer that was never allocated by 
+//one of these functions (or has already been freed), the behavior is undefined.

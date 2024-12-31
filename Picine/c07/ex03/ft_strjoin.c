@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int ft_len(char**strs, int size, char *sep)
+/*int ft_len(char**strs, int size, char *sep)
 {
     int i = 0;
      int j = 0;
@@ -80,4 +80,25 @@ int main ()
   char *result = ft_strjoin(size, strs, sep);
   printf("%s", result);
   free(result);
+}*/
+
+ void ft_strjoin(int size, char **strs, char *sep)
+ {
+  int i = 0;
+  int j = 0;
+  //use array notation it is simple
+  while (strs[i][j] != '\0')
+  {
+  printf("%c", strs[i][j]);
+  j++;
+  }
+  printf("\n");
+
+ }
+int main()
+{
+  char *strs[2] = {"hello", "world"};
+  char sep[] = ", ";
+  int size = 2;
+ ft_strjoin(size, strs, sep);
 }

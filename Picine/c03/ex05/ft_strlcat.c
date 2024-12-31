@@ -32,14 +32,9 @@
  unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
  {
     unsigned int  slen = ft_strlen(src);
-      unsigned int  dlen;
+      unsigned int  dlen = ft_strlen(dest);
     //unsigned int dlen = ft_strlen(dest);
-   unsigned int i = 0;
-   while (dest[i] != '\0')
-   {
-    i++;
-   }
-   dlen = i;
+   
 
   if(size == 0 || dlen >= size)
   {

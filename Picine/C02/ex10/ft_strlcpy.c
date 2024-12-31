@@ -27,7 +27,8 @@
  unsigned int ft_strlcpy(char *dest, char *src, unsigned int size)
  {
     unsigned int srclen = ft_strlen(src);
-    if(srclen + 1 < size)
+    if(srclen + 1 < size)// if the passed size was bigger than length of src
+                        //we copy up to src length + 1
     {
     unsigned int i = 0;
      while (i < srclen + 1)
