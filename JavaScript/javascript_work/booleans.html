@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>Booleans</title>
+    </head>
+   
+    <body>
+    <script>
+        //booleans are used to see if something is true or false
+    true
+    false
+
+    //console.log(3 > 5);
+    //comparison operators(>, <,==) have less precedence than math (-, +, *..)
+    //console.log(5 == '5.00');// evaluate to true, because double equals convert them into the same type , therefore it is better to use the three equals to compare two value
+    /*
+    console.log(5 === '5.00');
+    if(false)
+    {
+        console.log('hello');
+    }else{
+        console.log('else');
+    }
+
+    if(16 >= 18){
+        console.log('you can drive');
+    }else{
+        console.log('you cannot drive');
+    }*/
+    //in JS there are some falsy values which act like they are false : false, 0, '', NaN, undefined, null, otherwise everything is truthy
+    //console.log('text' / 5);
+    // the result will be NaN, (NOT A NUMBER);
+
+    //ternary operator ? :
+    const result = false ? 'truthy' : 'falsy';
+    console.log(result)
+
+    //Guard operator &&
+    true && console.log('hello'); //this is shortcut for if(true){console.log('hello');}
+
+    const message = 5 && 'hello';
+    console.log(message); //do not panic , all this is just shortcut for if statment
+
+    //default operator ||
+    const currency = 'EUR' || 'USD';
+    console.log(currency);
+    </script>
+    </body>
+</html>

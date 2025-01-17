@@ -1,15 +1,16 @@
 #include <stdlib.h>
 #include <stdio.h>
-/*
+
 int *ft_range(int min, int max)
 {
     int* dup;
     if(min >= max)
     return NULL;
     dup = (int*) malloc((max - min) * sizeof(int));
-   *dup = min;
+  
     int* tem = dup;
- 
+    //This assigns the address stored in dup (i.e., the pointer to the allocated memory) to tem.
+   //At this point, both dup and tem are pointing to the same memory block. Essentially, both dup and tem will have the same address after this assignment, and they both refer to the same allocated memory.
     while (min < max)
     {
         *dup = min;
@@ -25,49 +26,16 @@ int main ()
     int min = 12;
     int max = 20;
     int *dup = ft_range(min, max);
-    int i = 0;
-    while ( *dup < max)
-    {
-        printf("%d ", *dup);
-       *dup++;
-    }
     
-}*/
- /*int *ft_range(int min, int max)
- {
-    int *range = malloc(max - min * sizeof(int));
-    if(range == NULL)
+    while (*dup)
     {
-        return NULL;
+        printf("%d\n", *dup);
+       dup++;
     }
-    if (min > max)
-    {
-        return NULL;
-    }
-    int  i = 0;
-    while (min < max)
-    {
-        range[i] = min;
-        min++;
-        i++;
-    }
-    return range;
-
- }
-int main ()
-{
-    int min = 2;
-    int max = 9;
-   int *range = ft_range(min, max);
-   int i = 0;
-   while (i < max - min)
-   {
-    printf("%d", range[i]);
-    i++;
-   }
-
-}*/
-
+    free(dup);
+    
+}
+/*
  int *ft_range(int min, int max)
  {
     int len = max - min;
@@ -76,7 +44,7 @@ int main ()
     {
         return NULL;
     }
-    if (min > max || min == max)
+    if (min >= max)
     {
         return NULL;
     }
@@ -92,12 +60,11 @@ int main ()
  }
  int main()
  {
-    int min = 2;
-    int max = 9;
-    int *arr = ft_range(min, max);
+   
+    int *arr = ft_range(2, 9);
     while (*arr)
     {
         printf("%d\n", *arr);
         arr++;
     }
- }
+ }*/
