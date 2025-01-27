@@ -6,6 +6,7 @@
    
     <body>
     <script>
+      /*
         //the word function creates a function we choose the name of it
       function function1(){
         console.log('hello');
@@ -15,6 +16,15 @@
       function1();
       function1();
       //functions allow us to reuse a part of code
+      */
+     function calculatTax(cost, taxPercent = 
+      0.1) {                  //default value
+
+      console.log(cost * taxPercent)
+      //the code is only creating a function , to run it you have to call it
+     }
+     calculatTax(2000, 0.2);
+     calculatTax(5000);
     </script>
     </body>
 </html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>Practice Functions</title>
+    </head>
+   
+    <body>
+    <script>
+        /*
+   function greet (name)
+   {
+       if(!name){
+           console.log("hello there!")
+       }
+       else
+    console.log(`hello ${name}`);
+    // when using template literals (also known as template strings), you need to wrap the variable inside ${} and ensure the whole string is enclosed in backticks (`), not single quotes (').
+   }
+   
+   greet('');*/
+   
+   function convertToFahrenheit(celsius){
+    console.log(eval(celsius * 9 / 5) + 32);
+   }
+   convertToFahrenheit(25);
+
+   function convertToCelsius(fahrenheit){
+    console.log(eval(fahrenheit - 32) * 5/9);
+   }
+   convertToCelsius(86);
+
+   function convertTemperature(degrees, unit)
+   {
+
+      if(unit === 'C')
+      {
+        return convertToFahrenheit;
+      }
+       
+   }
+   convertTemperature(25, 'C');
+   convertTemperature(86, 'F');
+    </script>
+    </body>
+</html>

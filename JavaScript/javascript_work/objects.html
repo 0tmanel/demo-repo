@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>objects</title>
+    </head>
+   
+    <body>
+    <script>
+        /*
+        //an object groups , multiple values together
+        // to declare an object we start with an open curly bracket and end with closed one, inside of them we put valus assigned to proberty what is called probertiy-value name
+        //object let us group and use multiple value together
+     const product = {
+
+        name: 'socks',
+    // ^^^^^^
+    //this is called property
+        price: 1090 
+     };
+     console.log(product);
+     console.log(product.name);
+     console.log(product.price);
+     product.name = 'cotton socks';
+     console.log(product);
+
+     product.newProperty = true;
+     
+     console.log(product);
+     //we can delete one by writing delete 
+     delete product.name;
+     console.log(product);
+     //an object is just another type of value
+     */
+    const product2 = {
+        name : 'shirt',
+        'delivery-time': '1 day',
+        rating: {
+            stars: 4.5,
+            count: 87
+        },
+        fun: function function1(){
+            console.log('funciton inside object');
+        }
+    };
+    console.log(product2);
+    console.log(product2.name);
+    //bracket notation
+    console.log(product2['name']);
+    console.log(product2['delivery-time'])
+    //inside an object we can stor any value
+    //function inside an object is called a method
+    console.log(product2.rating.count);
+    product2.fun();
+    console.log(typeof console.log)
+    //if you put the console alone you will have object , and with log you will find function , which is a method
+
+//JSON is a javascript object notation , it is  bisically a syntax, similar to javascript object but has less features . JSON does not suppurt single qoute and function
+//we use JSON  when we send  data beteween computers, also when we store data
+console.log( JSON.stringify(product2));
+const jasonString = JSON.stringify(product2);
+JSON.parse(jasonString);
+console.log(JSON.parse(jasonString))
+    </script>
+    </body>
+</html>

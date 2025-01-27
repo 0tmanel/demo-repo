@@ -1,5 +1,8 @@
 #ifndef FT_STOCK_STR_H
 #define FT_STOCK_STR_H
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
 
 typedef struct s_stock_str
 {
@@ -7,7 +10,6 @@ typedef struct s_stock_str
     char *str;
     char *copy;
 }t_stock_str;
-void ft_show_tab(struct s_stock_str *par);
-struct s_stock_str *ft_strs_to_tab(int ac, char **av);
+
 
 #endif

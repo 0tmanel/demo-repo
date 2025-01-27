@@ -78,3 +78,10 @@ void ft_putnbr_base(int result, char*finalNumber, char *base_to)
     }
     
 }
+
+/*
+To make the linker aware of the function in file2.c, you need to declare it in file1.c. This is why the line void helper_function(); appears in file1.c — it tells the compiler that helper_function() exists and will be defined somewhere (in this case, in file2.c).
+
+Linking Multiple Files:
+When you compile file1.c file2.c, GCC compiles both files separately and then links them together. As long as you provide the correct declarations in file1.c (e.g., void helper_function();), GCC will link everything properly. There’s no need to worry about which file contains which function — the linker will resolve the references as long as they are declared and defined correctly.
+*/

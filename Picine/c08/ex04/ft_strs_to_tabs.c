@@ -1,61 +1,54 @@
 #include "ft_stock_str.h"
 #include <stdlib.h>
-#include <string.h>
-struct s_stock_str *ft_strs_to_tab(int ac, char **av)
-{
-    t_stock_str *strs;
-
+ int ft_strlen(char *str)
+ {
     int i = 0;
-    int j = 0;
-    char *str;
-    char *copy;
-    int size;
-    strs = malloc(ac + 1 * sizeof(t_stock_str));
-    if(strs == NULL)
-    return NULL;
-    while (i < ac)
+    while (str[i] != '\0')
     {
-       
-       while (av[i] != '\0')
-       {
-       i++;
-       }
-       size = i;
-
-    strs[i].str = malloc(size  + 1);
-    strs[i].copy = malloc(size + 1);
-    if(strs[i].str == NULL || strs[i].copy == NULL)
-    {
-        int k = 0;
-        while (k < i)
-        {
-           free(strs[k].str);
-           free(strs[k].copy);
-           k++;
-        }
-        free(strs);
-    return NULL;
-    }
-        j = 0;
-        while (j < size)
-        {
-
-             strs[i].str[j] = av[i][j]; 
-             strs[i].copy[j]  = av[i][j];
-            j++;
-        }
-        strs[i].str[size] = '\0';
-        strs[i].copy[size] = '\0';
-        strs[i].size = size;
         i++;
     }
-    strs[ac].str = NULL;
-   
-        return strs;
-
-}
-int main(int ac, char **av)
+    return i;
+ }
+ char *ft_strdup(char *src)
 {
-    ft_strs_to_tab(ac, av);
-    return 0;
+  int len = ft_strlen(src);
+  char *strdup = malloc((len + 1) * sizeof(char));
+  if (strdup == NULL)
+  {
+    return NULL;
+  }
+
+  int i = 0;
+  while (src[i] != '\0')
+  {
+    strdup[i] = src[i];
+    i++;
+  }
+  strdup[i] = '\0';
+
+  return strdup;
 }
+ struct s_stock_str *ft_strs_to_tab(int ac, char **av)
+ {
+    int  i = 0;
+    
+    t_stock_str *string;
+   
+   string = malloc((ac + 1 )* sizeof(t_stock_str));
+   if(!string)
+   return NULL;
+    while(i  < ac)
+    {
+       string[i].size =  ft_strlen(av[i]);
+        string[i].str = av[i];
+        string[i].copy = ft_strdup(av[i]);
+        i++;
+        }
+        string[i].str = 0;
+        string[i].copy = 0;
+    
+    return string;
+ }
+
+//When dealing with dynamic memory allocation in C, if you fail to clean up memory that was previously allocated before an error occurs, you'll create memory leaks. This happens because the memory is still allocated, but you lose the pointer to it, making it impossible to free that memory later.
+//By freeing all previously allocated memory before returning, you're ensuring the program doesn't waste memory and the error handling is robust.
