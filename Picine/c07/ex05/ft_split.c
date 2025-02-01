@@ -1,7 +1,7 @@
   #include <stdlib.h>
   #include <stdio.h>
   #include <string.h>
-  /*
+  
   int ft_seperator(char c, char * charset)
   {
     int i = 0;
@@ -76,7 +76,7 @@
     return strs;
 
   }
-  */
+  
   int main() {
     char str[] = "hello,world,HOW,are,you";
     char charset[] = ",";
