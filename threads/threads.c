@@ -1,4 +1,15 @@
 /*
+A core is essentially a processing unit within the CPU. Modern CPUs have multiple cores, meaning they can handle multiple tasks simultaneously.
+
+Single-core: Older CPUs had just one core, meaning they could only handle one instruction at a time.
+Multi-core: Most modern CPUs have multiple cores (dual-core, quad-core, hex-core, etc.), allowing them to perform multiple operations at the same time, which speeds up tasks. For example, a quad-core CPU can handle four separate tasks at once.
+The more cores a CPU has, the better it can multitask and handle more complex workloads, especially for tasks like gaming, video editing, or running multiple programs simultaneously.
+*/
+
+/*
+Multithreading is the ability of CPU to perform different task concurrently (at the same tame)
+
+Each thread executes on its own stack, although any thread can access the stacks of other threads in the same process.
 
 What is the point of threads? We obviously need processes, since they are the abstraction of a running program. But why decouple the unit of execution and introduce threads? There are six primary benefits to multithreading:
 
@@ -57,6 +68,22 @@ Spinlocks: A type of lock where the thread continuously checks (spins) if the lo
 Example of a lock in action:
 Let's say two threads are trying to update a bank account balance at the same time. Without a lock, both threads could read the balance, calculate the new balance, and write it back simultaneously, potentially causing an incorrect result. By using a lock, you can ensure that only one thread can update the balance at a time.
 
+An execution thread, usually known simply as a thread, is the result of a fork in execution within a process. A thread inherits many of the attributes of the process that contains it (such as the process’s address space), and multiple threads can execute concurrently within a single process under a model called multithreading.
+
+
+“the support of threading itself is not implemented in most toolchains, so we are going to use the library pthreads to write down code examples”
+
+“thread is a stream of instructions that can be scheduled for execution by the operating system.
+The operating system does not schedule processes but threads. Each thread lives as a part of a process and has a piece of process state, which is its own.
+Registers.
+Stack (technically, it is defined by the stack pointer register; however, as all processor’s threads share the same address space, one of them can access the stacks of other threads, although this is rarely a good idea).
+Properties of importance to the scheduler such as priority.
+Pending and blocked signals.
+Signal mask.
+When the process is closed, all associated resources are freed, including all its threads, open file descriptors, etc.”
+
+  
+
 ##############################CONCURRENCY################
 
 
@@ -70,5 +97,13 @@ Tasks can be split and managed in such a way that they appear to be running simu
 It helps improve performance, especially on systems with multiple processors or cores, but it also requires careful management to avoid conflicts (like race conditions or deadlocks).
 
 
+#### COST OF IT
+Concurrency is less expensive in terms of hardware resources, but it can still introduce overhead. The main costs associated with concurrency are:
+
+Context Switching: When the operating system switches between threads (which happens when you're running multiple threads concurrently on a single core), it must save the state of the current thread and load the state of the next one. This process is called context switching and can introduce some performance overhead. However, on modern systems, this is typically small unless you're managing thousands of threads at once.
+
+Synchronization: When threads share resources (like memory or files), the program must use synchronization mechanisms (e.g., locks, semaphores, etc.) to ensure that threads don’t interfere with each other. Managing these mechanisms introduces additional overhead and complexity.
+
+Efficiency: Since threads in a concurrent system share a single CPU core, they might not be able to fully utilize the CPU for certain tasks. This could lead to suboptimal performance in CPU-bound operations (e.g., computations) because the CPU is being used for switching between threads rather than executing them.
 
 */
