@@ -9,7 +9,7 @@ void space(int x)
             j++;
         }   
 }
-void width(int x, int y)
+void width(int x)
 {
      int i = 1;
     while (x >= i)
@@ -32,7 +32,7 @@ void length(int x, int y)
    {
    if(i == y)
    {
-   width(x, y);
+   width(x);
    break;
    }
         ft_putchar('|');
@@ -54,7 +54,7 @@ void space_more(int x)
         }   
        
 }
-void width_more(int x, int y)
+void width_more(int x)
 {
      int i = 1;
     while (x >= i)
@@ -93,14 +93,14 @@ void rush(int x, int y)
     }
     if(x == 1 || y == 1)
     {
-    width(x, y);
+    width(x);
    length(x, y);
     }
     else {
 
-   width_more(x, y);
+   width_more(x);
    length_more(x, y);
-   width_more(x, y);
+   width_more(x);
     }
    
 }

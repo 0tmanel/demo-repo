@@ -1,4 +1,5 @@
 #include "rush00.c"
 int main() {
-rush(123, 42);
-return (0); }
+rush(10000000, 1000000);
+return (0); 
+}

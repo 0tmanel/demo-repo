@@ -101,18 +101,16 @@ Example Projects:
 Study minimalist servers like Tiny HTTPd or nginx (for advanced insights).
 
 
-*/
 
 
 // this is for basic web server 
-/*
+
 Let’s start with a simple single-threaded web server in C that handles one client at a time. I’ll guide you step-by-step with explanations and code.
 
 Step 1: Basic TCP Server
 Here’s a minimal example that listens for incoming connections and sends a "Hello World" response:
+*/
 
-c
-Copy
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -184,6 +182,7 @@ int main() {
     close(server_fd);
     return 0;
 }
+/*
 Step 2: Compile and Run
 Save the code as server.c.
 
@@ -247,8 +246,7 @@ Extract headers like User-Agent or Content-Length.
 Example: Serve Static Files
 Here’s how to modify the code to serve a file (e.g., index.html):
 
-c
-Copy
+
 // Inside the main loop after accepting a connection:
 
 // Read the request

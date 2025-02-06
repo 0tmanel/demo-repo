@@ -7,6 +7,7 @@
 //Increment the large integer by one and return the resulting array of digits.
 #include <stdio.h>
 #include <stdlib.h>
+/*
 int* plusOne(int* digits, int digitsSize, int* returnSize) {
     int* arr ;
     int i = 0;
@@ -30,7 +31,12 @@ int* plusOne(int* digits, int digitsSize, int* returnSize) {
     }
     *returnSize = 0;
     return NULL;
-}
+}*/
+
+
+
+
+
 int main (){
     int digits[] = {9};
     int digitsSize = 1;
