@@ -1,11 +1,11 @@
 // ############## HEADERS ##########
 // #define and #include and others that we haven’t yet covered—are handled by the preprocessor, Moreover, the preprocessor can easily be misused to create programs that are almost impossible to understand.
 
-//The behavior of the preprocessor is controlled by preprocessing directives: com- mands that begin with a # character. The #define directive defines a macro, a name that represents something else, such as a constant or frequently used expression.
+//The behavior of the preprocessor is controlled by preprocessing directives: commands that begin with a # character. The #define directive defines a macro, a name that represents something else, such as a constant or frequently used expression.
 
 //The #include directive tells the preprocessor to open a particular file and “include” its contents as part of the file being compiled.
 
-//The input to the preprocessor is a C program, possibly containing directives. The preprocessor executes these directives, removing them in the process. The output of the preprocessor is another C program: an edited version of the original pro- gram, containing no directives. The preprocessor’s output goes directly into the compiler, which checks the program for errors and translates it to object code (machine instructions).
+//The input to the preprocessor is a C program, possibly containing directives. The preprocessor executes these directives, removing them in the process. The output of the preprocessor is another C program: an edited version of the original program, containing no directives. The preprocessor’s output goes directly into the compiler, which checks the program for errors and translates it to object code (machine instructions).
 
 // most C compilers provide a way to view the output of the preprocessor. Some compilers generate preprocessor output when a certain option is specified (GCC will do so when the -E option is used). gcc -E [NAME OF THE FILE]
 
@@ -17,7 +17,7 @@
 
 //■ Conditional compilation. The #if, #ifdef, #ifndef, #elif, #else, and #endif directives allow blocks of text to be either included in or excluded from a program, depending on conditions that can be tested by the preprocessor.
 
-//Besides its simple form, a macro can take parameters and behave like a function. Don’t leave a whitespace after the name of a parameterized macro because the prepro- cessor will handle the left parenthesis as the beginning of a simple macro definition.
+//Besides its simple form, a macro can take parameters and behave like a function. Don’t leave a whitespace after the name of a parameterized macro because the preprocessor will handle the left parenthesis as the beginning of a simple macro definition.
 
 //to creat a header file The #ifndef and #define directives are used together in C and C++ header files to prevent multiple inclusions of the same file. This is commonly referred to as an include guard.
 
@@ -26,6 +26,8 @@
 
 
 //angular brackets (<>), as in #include <stdio.h> indicate to the preprocessor that a header file is to be found in a system directory. Quotes around the header file name, as in #include "planet.h" mark it as information about a library belonging to the programmer.
+
+//types of storage :
 
 //Use auto by default (no need to specify it explicitly).
 

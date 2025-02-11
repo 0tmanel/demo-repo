@@ -1,4 +1,4 @@
-#include "ft_f2.h"
+#include "ft_f.h"
 void ft_swap(int *a, int *b)
 {
     int t;

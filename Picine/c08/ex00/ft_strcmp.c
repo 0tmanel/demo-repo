@@ -1,4 +1,4 @@
-#include "ft_f2.h"
+#include "ft_f.h"
 int ft_strcmp(char *s1, char *s2)
  {
 while (*s1 && (*s1 == *s2))
