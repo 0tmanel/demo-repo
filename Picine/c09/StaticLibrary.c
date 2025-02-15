@@ -1,6 +1,6 @@
 /////static libraries
 
-// Libraries are collections of precompiled functions that have been written to be reusable. Typically, they con- sist of sets of related functions to perform a common task.
+// Libraries are collections of precompiled functions that have been written to be reusable. Typically, they consist of sets of related functions to perform a common task.
 
 //Standard system libraries are usually stored in /lib and /usr/lib. The C compiler (or more exactly, the linker) needs to be told which libraries to search, because by default it searches only the standard C library.
 
@@ -15,7 +15,7 @@
 //You can create and maintain your own static libraries very easily by using the ar (for archive) program and compiling functions separately with gcc -c. Try to keep functions in separate source files as much as possible
 
 //##################################################
-//In this example, you create your own small library containing two functions and then use one of them in an example program. The functions are called fred and bill and just print greetings.
+//In this example, you create your own small library containing two functions and then use one of them in an example program. The functions are called khalid and Otman and just print greetings.
 
 //1. First, create separate source files (imaginatively called Otman.c and khalid.c) for each function. Here’s the first:
            #include <stdio.h>
@@ -33,7 +33,7 @@
 
 //$gcc -c otman.c khalid.c 
 //$ls *.o
-//bill.o fred.o
+//otman.o khalid.o
 //3. Now write a program that calls the function otman. First, it’s a good idea to create a header file for your library. This will declare the functions in your library and should be included by all applications that want to use your library. It’s a good idea to include the header file in the files khalid.c and otman.c too. This will help the compiler pick up any errors.
 
            /*
