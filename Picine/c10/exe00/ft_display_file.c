@@ -1,6 +1,6 @@
 #include <unistd.h>
 #include <fcntl.h>
-#define MAX_SIZE 100
+#define MAX_SIZE 1024
 int main (int argc, char**argv)
 {
     char buffer[MAX_SIZE];
@@ -23,9 +23,9 @@ int main (int argc, char**argv)
     int numRead = read(fd, buffer, MAX_SIZE);
     if(numRead == -1)
     {
-        write(1, "Cannot read file.\n", 18);
-        return 1;
+        write(2, "Cannot read file.\n", 18);
         close(fd);
+        return 1;
     }
     buffer[numRead] = '\0';
         write(1, buffer, numRead);
@@ -33,4 +33,5 @@ int main (int argc, char**argv)
     close(fd);
     }
      write(1, "\n", 1);
+     return 0;
 }

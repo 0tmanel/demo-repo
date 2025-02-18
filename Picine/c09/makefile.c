@@ -50,3 +50,5 @@ will build the justify executable, since justify is the first target in our make
 
 //clean rmove only object file
 //The fclean target is a more aggressive version of clean. It removes all generated files,
+
+//The "all" target is often used as a default target in Makefiles, so that when the user runs make without specifying a particular target, the "all" target will be executed by default.

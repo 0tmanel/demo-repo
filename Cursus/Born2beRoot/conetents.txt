@@ -1,0 +1,29 @@
+https://github.com/amaitou/1337/tree/master/Cursus
+
+Born2beRoot
+1: What is LVM?
+2:The difference between aptitude and apt?
+    - Installing packages in aptitude and apt-get
+    -Search for packages in aptitude and apt-get
+    -Remove packages in aptitude and apt-get
+3:AppArmor and SELinux
+    -SELinux
+    -AppArmor
+    -The Difference between AppArmor and SELinux
+3:What is SSH?
+  -How Does SSH Work?
+  -Syntax of establishing an SSH Connection
+4:What is UFW?
+  -Let's deal with UFW
+  -UFW Profiles
+5: User and Group Management
+  -Users
+  -Groups
+6:Password Management
+  -Password Policies
+  -Login Configuration
+7:SUDO
+  -Understand SUDO
+  -Configure SUDO
+8: Get close to crontab
+  -How to use crontab

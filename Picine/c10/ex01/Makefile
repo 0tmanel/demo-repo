@@ -1,9 +1,15 @@
+CC = gcc
+FLAGS =  -Wall -Wextra -Werror
+OBJ = ft_cat
 
+all : $(OBJ)
 
-all : ft_cat
+$(OBJ) : ft_cat.o ft_cat.c
+	$(CC) $(FLAGS) ft_cat.o -o $(OBJ)
 
-ft_cat : main.o
-	gcc -o ft_cat main.o
+ft_cat.o : ft_cat.c
+	$(CC) $(FLAGS) -c ft_cat.c -o ft_cat.o 
+
 
 clean :
 	rm -f *.o

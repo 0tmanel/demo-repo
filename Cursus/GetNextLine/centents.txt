@@ -1,0 +1,12 @@
+--Mandatory part (Handle only one file descriptor)
+---Bonus Part (Handle multiple file descriptors at the same time)
+
+Things you will learn in this project
+
+
+1:Static variables
+2:Memory segmentation in c
+3:File handling
+4:Pointers
+5:File descriptors
+6:Header files

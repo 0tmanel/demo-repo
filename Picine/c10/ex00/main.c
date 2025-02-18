@@ -9,7 +9,7 @@ int main (int argc, char *argv[])
        String literals are immutable, so modifying the contents 
        of buf will lead to undefined behavior.*/
     int fd;
-    if (argc == 1)
+    if (argc < 2)
     {
         write(2, "File name missing\n", 18);
         return 1;
