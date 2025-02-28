@@ -1,0 +1,13 @@
+Line 1: Once upon a time
+Line 2: In a land far, far away
+Line 3: There was a mighty programmer
+Line 4: Who loved to write C code
+Line 5: And build powerful tools
+Line 6: Like their own version of 'tail'
+Line 7: With options for lines and bytes
+Line 8: Testing is crucial for success
+Line 9: Bugs may hide, but tests will find them
+Line 10: Happy coding and good luck!
+Line 11: Don't give up
+Line 12: trust yourself
+Line 13: Be happy
