@@ -69,3 +69,22 @@ return operation(num1, num2);
 printf("%d\n",compute(add,5,6)); 
 printf("%d\n",compute(sub,5,6));
 //The output will be an 11 and a –1. The add and sub function’s addresses were passed to the compute function. These addresses were then used to invoke the corresponding operation. This example also shows how code can be made more flexible through the use of function pointers.
+
+//#######returning funciton pointer 
+typedef int (*fptrOperation)(int,int);
+int add(int num1, int num2) { return num1 + num2;
+}
+int subtract(int num1, int num2) { return num1 - num2;
+}  
+fptrOperation select(char opcode) { switch(opcode) {
+case '+': return add;
+case '-': return subtract; }
+}
+int evaluate(char opcode, int num1, int num2) { 
+      fptrOperation operation = select(opcode); return operation(num1, num2);
+}
+int main ()
+{
+      printf("%d\n", evaluate('+', 5, 6));
+      printf("%d\n", evaluate('-', 5, 6));
+}

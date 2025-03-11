@@ -25,7 +25,7 @@ void print_column(int x, int y)
     i = 2;
     while ( i < y)
     {
-        ft_putchar('|');
+        ft_putchar('*');
         j = 2;
         while( j < x)
         {
@@ -33,7 +33,7 @@ void print_column(int x, int y)
             j++;
         }
         if (x > 1)
-            ft_putchar('|');
+            ft_putchar('*');
         ft_putchar('\n');
         i++;
     }
@@ -43,10 +43,10 @@ void rush(int x, int y)
 {
     if (x <= 0 || y <= 0)
         return;
-    print_row(x, 'o', '-', 'o'); // Top row
+    print_row(x, '/', '*', '\\'); // Top row
     print_column(x, y);          // Middle part
     if (y > 1)
-        print_row(x, 'o', '-', 'o'); // Bottom row
+        print_row(x, '\\', '*', '/'); // Bottom row
 }
 /*
 #include "ft_putchar.c"

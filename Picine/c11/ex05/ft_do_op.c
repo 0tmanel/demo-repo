@@ -1,88 +1,60 @@
- #include <stdio.h>
- #include <string.h>
- int add(int num1, int num2);
-int sub(int num1, int num2);
-int mult(int num1, int num2);
-int div(int num1, int num2);
-int mod(int num1, int num2);
+#include <unistd.h>
+#include "ft_atoi.c"
+#include "ft_putnbr.c"
 
- int add(int num1, int num2)
-    {
-        return num1 + num2;
-    }
- int sub(int num1, int num2)
-    {
-        return num1 - num2;
-    }
- int mult(int num1, int num2 )
-    {
-        return num2 * num2;
-    }
- int div(int num1, int num2)
-    {
-        if(num1 == 0 || num2 == 0)
-        {
-            write(1, "stop : modulo by zero", 1);
-            return 0;
-        }else
-        return num1 / num2;
-    }
-int mod(int num1, int num2 )
-    {
-        if(num1 == 0 || num2 == 0)
-        {
-            write(1, "stop : devision by zero", 1);
-            return 0;
-        }else 
-        return num1 % num2;
-    } 
-int ft_argv1(char* num1)
+int add(int num1, int num2)
 {
-    int i = 0;
-    int result = 0;
-    while (num1[i] != '\0')
-    {
-    result *= 10;
-    result += num1[i] - 48;
-    i++;
-    }
-    return result;
+    return num1 + num2;
 }
-int ft_argv3(char* num3)
+int subtract(int num1, int num2)
 {
-     int result = 0;
-     int i = 0;
-    while (num3[i] != '\0')
-    {
-    result *= 10;
-    result += num3[i] - 48;
-    i++;
-    }
-    return result;
+    return num1 - num2;
 }
-int main (int arc, char* argv[])
+int divide(int num1, int num2)
 {
-    if(arc != 4)
-    {
-        return 0;
-    }
-   
-    int (*operatio[5])(int, int) = {add, sub, mult, div, mod};
-    char *operation[] = {"+", "-", "*", "/", "%"};
-
-    int num1 = ft_argv1(argv[1]);
-    int num2 = ft_argv3(argv[3]);
-    char* operator = argv[2];
+    return num1 / num2;
+}
+int multibly(int num1, int num2)
+{
+    return num1 * num2;
+}
+int modulo(int num1, int num2)
+{
+    return num1 % num2;
+}
+void help(int num1, char *oper, int num2, int (*f[5])(int, int))
+{
+    char op[] = "+-/*%";
     int i = 0;
     while (i < 5)
     {
-        if(strcmp(operator, operation[i])== 0)
+        if (oper[0] == op[i])
         {
-       int result =  operatio[i](num1, num2);
-        printf("%d\n", result);
-        }
+            if (oper[0] == '/' && num2 == 0)
+            {
+                write(1, "Stop : division by zero", 23);
+                return;
+            }
+            else if (oper[0] == '%' && num2 == 0)
+            {
+                write(1, "Stop : modulo by zero", 21);
+                return;
+            }
+            ft_putnbr(f[i](num1, num2));
+            return;
+        }  
         i++;
     }
-
-    
+     write(1, "0", 1);
+}
+int main(int argc, char **argv)
+{
+    int (*f[5])(int, int) = {add, subtract, divide, multibly, modulo};
+    if (argc == 4)
+    {
+    int num1 = ft_atoi(argv[1]);
+    int num2 = ft_atoi(argv[3]);
+        help(num1, argv[2], num2, f);
+        write(1, "\n", 1);
+    }
 }
