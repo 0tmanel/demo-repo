@@ -1,3 +1,6 @@
+ /*
+ To covert a number from some base to any other given base, first write down that number and then divide it by the given base. We then note the remainder obtained from the division. Ultimately, divide the quotient of the division obtained by the given base. The obtained remainder should be noted. This process needs to be repeated till the quotient happens to be 0. Write the values of the remainders in this process from the bottom to the top. Thus, it will be the answer that is required.*/
+ 
  
  #include <unistd.h>
  #include <stdio.h>
@@ -11,10 +14,11 @@
     }
     return i;
  }
+ 
  /*
 
  
- /************************** FIRST************************
+ ************************** FIRST************************
  
 
 int	checkerror(char *str)
@@ -72,7 +76,9 @@ void	ft_putnbr_base(int nbr, char *base)
     }
     }
   }
- /****************************** SECOND************** */
+ ****************************** SECOND
+  */
+ 
  
    void ft_decimal(int n)
  {
@@ -176,21 +182,68 @@ void	ft_putnbr_base(int nbr, char *base)
     printf("\n");
     //1010101010001.
  }
- /*if(n < 0)
+ /*#include <unistd.h>
+#include <stdio.h>
+void ft_putchar(char c)
+{
+    write(1, &c, 1);
+}
+int check(char *base)
+{
+    int i = 0;
+    while (base[i] != '\0')
     {
-        ft_putchar('-');
-        n = -n;
+         if (base[i] == '+' || base[i] == '-')
+            return 0;
+        int j = i + 1;
+        while (base[j] != '\0')
+        {
+            if (base[i] == base[j])
+                return 0;
+            j++;
+        }
+        i++;
     }
-    if(n < 9)
+    return 1;
+}
+int ft_strlen(char *base)
+{
+    int i = 0;
+    while (base[i] != '\0')
     {
-        //To get the ones place (the last digit) of a number, 
-        //you can use the modulo operator (%).
-         //This operator gives the remainder of a division.
-        ft_putchar(n % 10 + '0');
+        i++;
     }
-    
-    if(n > 9)
+    return i;
+}
+void ft_putnbr_base(int nbr, char *base)
+{
+    int len = ft_strlen(base);
+    if (len < 2 || !check(base) )
+        return;
+    long  nb = nbr;
+    if(nb < 0)
     {
-        ft_putnbr(n / 10);
-        ft_putchar(n % 10 + '0');
-    }*/
+        write(1, "-", 1);
+        nb *= -1;
+    }
+    if (nb < len)
+    {
+        ft_putchar(base[nb % len]);
+    }
+    if (nb > len)
+    {
+        ft_putnbr_base(nb / len, base);
+        ft_putchar(base[nb % len]);
+    }
+}
+int main()
+{
+     ft_putnbr_base(-12, "01");
+	printf("\n");
+	ft_putnbr_base(40, "poneyvif");
+	printf("\n");
+	ft_putnbr_base(894867, "0123456789");
+	printf("\n");
+	ft_putnbr_base(53, "0123456789abcdef");
+    printf("\n");
+}*/

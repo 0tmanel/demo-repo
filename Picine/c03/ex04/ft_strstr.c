@@ -7,7 +7,7 @@
 
  #include <stdio.h>
  #include <string.h>
- /*
+ 
  char *ft_strstr(char *str, char *to_find)
  {
     if(to_find[0] == '\0')
@@ -33,12 +33,12 @@
     }
     return 0;
 
- }*/
+ }
  int main ()
  {
     char str[] = "hello";
     char to_find[] = "el";
-   //char *result = ft_strstr(str, to_find);
-   char *result = strstr(str, to_find);
+   char *result = ft_strstr(str, to_find);
+   //char *result = strstr(str, to_find);
    printf("%s\n", result);
  }
