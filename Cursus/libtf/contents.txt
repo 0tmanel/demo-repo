@@ -1,3 +1,5 @@
+https://github.com/appinha/42cursus-00-Libft?tab=readme-ov-file
+
 This is the very first project in the 42Cursus and it aims to recode and reproduce the behavior of some pre-defined functions in C Standard Libs.
 some of these functions are pre-defined in the standard C libs and others are not.
 
