@@ -16,7 +16,7 @@ int ft_list_size(t_list *begin_list)
 	}
 	return(count);
 }
-/*
+
 void display(t_list *begin_list)
 {
   while(begin_list != NULL)
@@ -56,4 +56,4 @@ int main()
   display(head);
   printf("%d", ft_list_size(head));
   return 0;
-}*/
+}

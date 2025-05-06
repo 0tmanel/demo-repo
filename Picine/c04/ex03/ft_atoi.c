@@ -13,25 +13,19 @@
 int ft_atoi(char *str)
   {
     int i = 0;
-    int result = 0;
-    int sign = 0;
-    while (str[i] != '\0')
-    {
-        if((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+    long result = 0;
+    int sign = 1;
+        while((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
         {
             i++;
         }
-        if(str[i] == '-' || str[i] == '+')
+        while(str[i] == '-' || str[i] == '+')
         {
             if(str[i]== '-')
             {
-                sign++;
+                sign = -1;
             }
             i++;
-        }
-        if((str[i] >= 'a' && str[i] <= 'z') || (str[i]>= 'A' && str[i] <= 'Z'))
-        {
-            break;
         }
         while(str[i] >= '0' && str[i] <= '9')
         {
@@ -39,23 +33,21 @@ int ft_atoi(char *str)
             result += str[i] - '0';
             i++;
         }
-        i++;
-    }
 //Even Numbers ====== positive number: A number is even if it is divisible by 2 without 
 //leaving a remainder. This means that when
 // divided by 2, the remainder is 0.
 
 //Odd Numbers===== negative: A number is odd if it is not divisible by 2 without
 // leaving a remainder. When divided by 2, the remainder is 1.
-    if (!sign % 2 == 0)
-    {
-        return -result;
-    }
-   return result;
+ if(!sign && result > 2147483648)
+        return 2147483648 * -1;
+        else if(sign && result > 2147483647)
+        return 2147483647 * sign;
+   return result * sign;
   }
   int main ()
   {
-    char str[] = " ---+--+1234ab567";
+    char str[] = "-91283472332";
   int number = ft_atoi(str);
   printf("%d\n", number);
   }

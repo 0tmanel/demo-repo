@@ -98,6 +98,6 @@ void ft_print_compn(int n)
 
 int main()
 {
-    ft_print_combn(4);
+    ft_print_compn(4);
     write(1, "\n", 1);
 }

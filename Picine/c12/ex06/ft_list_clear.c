@@ -51,3 +51,6 @@ int main ()
       ft_list_clear(original, &ft_clear);      
    
 }
+/*Testing whether a list (or any allocated memory) has been successfully freed in C can be tricky because, once memory is freed, it is no longer valid. Attempting to access a freed pointer results in undefined behavior (memory corruption, crashes, etc.).
+
+That said, there are a few ways you can check and confirm that memory was freed, but they require careful techniques and tools since C doesn't have automatic memory management or garbage collection like higher-level languages.*/

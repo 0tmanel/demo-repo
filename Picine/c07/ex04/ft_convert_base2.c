@@ -52,7 +52,7 @@ Return value: The function will return 3, indicating that 349 in base 16 takes 3
         return lenght;
  }
  
-void ft_putnbr_base(int result, char*finalNumber, char *base_to)
+char *ft_putnbr_base(int result, char*finalNumber, char *base_to)
 {
     int lenght_base = ft_len(base_to);
     int len_finalNumber = ft_nbr_len(result, base_to, 0);
@@ -76,7 +76,7 @@ void ft_putnbr_base(int result, char*finalNumber, char *base_to)
     {
        finalNumber[i] = base_to[nb];  
     }
-    
+    return finalNumber;
 }
 
 /*

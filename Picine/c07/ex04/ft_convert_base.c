@@ -1,6 +1,7 @@
  #include <stdlib.h>
  #include <stdio.h>
  #include <unistd.h>
+ #include "ft_convert_base2.c"
  char* ft_putnbr_base(int result, char*finalNumber, char *base_to);
  int ft_nbr_len(int number, char *base_to_len, int lenght);
  int checkerror(char *str)
@@ -104,7 +105,7 @@ int ft_atoi_base(char *nbr, char *base)
  }
  int main ()
  {
-    char nbr[]= "-2147483648";
+    char nbr[]= "-6483648";
     char base_from[] = "0123456789";
     char base_to[] = "0123456789ABCDEF";
     char * array = ft_convert_base(nbr, base_from, base_to);

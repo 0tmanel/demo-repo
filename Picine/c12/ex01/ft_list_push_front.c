@@ -1,6 +1,7 @@
 #include "ft_list.h"
 #include <stdio.h>
 #include <stdlib.h>
+//Insertion at the beginning of the list avoids any need to traverse the list, but does require us to update the pointer (denoted l) to the head of the data structure.
 t_list *ft_create_elem(void *data)
 {
     t_list *new_node;
