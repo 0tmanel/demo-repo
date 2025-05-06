@@ -7,6 +7,7 @@ void ft_memdel(void **ap)
     {
         free(ap);
         ap = NULL;
+        //If we try to dereference a freed pointer, its behavior is undefined. As a result, some programmers will explicitly assign NULL to a pointer to designate the pointer as invalid.
     }
 }
 int main ()

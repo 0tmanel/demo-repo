@@ -25,3 +25,19 @@ int main()
     printf("After memset():  %s\n", str);
     return 0;
 }
+/*Among the collection of memory-manipulating functions, the most common is easily memset():
+    #include <string.h>
+void * memset (void *s, int c, size_t n);
+A call to memset() sets the n bytes starting at s to the byte c and returns s. A frequent
+use is zeroing a block of memory:
+    // zero out [s,s+256) 
+    memset (s, '\0', 256);
+bzero() is an older, deprecated interface introduced by BSD for performing the same task. New code should use memset(), but Linux provides bzero() for backward com‐ patibility and portability with other systems:
+    #include <strings.h>
+void bzero (void *s, size_t n);
+The following invocation is identical to the preceding memset() example:
+    bzero (s, 256);
+Note that bzero() (along with the other b interfaces) requires the header <strings.h> and not <string.h>.
+##ALERT
+Do Not Use memset() if You Can Use calloc()!
+Avoid allocating memory with malloc() only to immediately zero the provided memory with memset(). While the result may be the same, foregoing the two functions for a single calloc(), which returns zeroed memory, is superior. Not only will you make one less function call, but calloc() may be able to obtain already zeroed memory from the kernel. In that case, you avoid manually setting each byte to 0, improving performance.*/
