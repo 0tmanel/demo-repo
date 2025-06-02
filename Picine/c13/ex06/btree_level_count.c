@@ -67,3 +67,70 @@ int main ()
     int found = btree_level_count(root);
     printf("%d", found);
 }
+/*Let’s say the tree is:
+
+mathematica
+Copy
+Edit
+        A
+       / \
+      B   C
+     / \
+    D   E
+Nodes:
+
+root = A
+
+root->left = B
+
+root->right = C
+
+root->left->left = D
+
+root->left->right = E
+
+🔍 What happens with this code:
+c
+Copy
+Edit
+int left = maxDepth(root->left);
+int right = maxDepth(root->right);
+Suppose you're at root = A.
+
+This means:
+
+First, the line int left = maxDepth(root->left); is executed.
+
+This pauses execution of the current function (A).
+
+It goes into a new call: maxDepth(B).
+
+Inside maxDepth(B):
+
+Again, it hits int left = maxDepth(root->left); → calls maxDepth(D).
+
+Inside maxDepth(D):
+
+D has no children, so both maxDepth(NULL) return 0, and it returns 1.
+
+Now back in maxDepth(B), it executes:
+
+int right = maxDepth(root->right); → calls maxDepth(E)
+
+Inside maxDepth(E):
+
+E has no children → returns 1.
+
+Back in maxDepth(B):
+
+Now it can compute max(1, 1) + 1 = 2 and return to maxDepth(A).
+
+Now back in maxDepth(A):
+
+It executes int right = maxDepth(root->right); → calls maxDepth(C)
+
+C has no children → returns 1.
+
+Finally, maxDepth(A) computes: max(2, 1) + 1 = 3.
+
+*/

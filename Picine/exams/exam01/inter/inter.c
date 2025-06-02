@@ -69,3 +69,50 @@ int main (int argc, char **argv)
             j++;
         }
         */
+
+       ////////////////////////////////////////
+//        #include <unistd.h>
+// int is_found(char* str, int i, char c)
+// {
+//     int j = 0;
+//     while(i > j)
+//     {
+//         if(str[j] == c)
+//         {
+//             return 0;
+//         }
+//         j++;
+//     }
+//     return 1;
+// }
+// int is_found2(char* str, char c)
+// {
+//     int j = 0;
+//     while(str[j])
+//     {
+//         if(str[j] == c)
+//         {
+//             return 1;
+//         }
+//         j++;
+//     }
+//     return 0;
+// }
+// void inter(char * s1, char* s2)
+// {
+//     int i = 0;
+//     while(s1[i])
+//     {
+//         if(is_found(s1, i, s1[i]) && is_found2(s2, s1[i]))
+//         {
+//             write(1, &s1[i], 1);
+//         }
+//         i++;
+//     }
+
+// }
+// int main (int argc, char **av)
+// {
+//     inter(av[1], av[2]);
+//     write(1, "\n", 1);
+// }

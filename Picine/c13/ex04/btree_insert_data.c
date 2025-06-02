@@ -1,3 +1,12 @@
+ /*How to Insert a value in a Binary Search Tree:
+A new key is always inserted at the leaf by maintaining the property of the binary search tree. We start searching for a key from the root until we hit a leaf node. Once a leaf node is found, the new node is added as a child of the leaf node. The below steps are followed while we try to insert a node into a binary search tree:
+
+Initilize the current node (say, currNode or node) with root node
+Compare the key with the current node.
+Move left if the key is less than or equal to the current node value.
+Move right if the key is greater than current node value.
+Repeat steps 2 and 3 until you reach a leaf node.
+Attach the new key as a left or right child based on the comparison with the leaf node's value.*/
  #include <stdio.h>
  #include "ft_btree.h"
  #include <stdlib.h>

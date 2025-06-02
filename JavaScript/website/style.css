@@ -1,0 +1,306 @@
+/* --- General Styles & Variables --- */
+:root {
+    --primary-color: #8B5E3C; /* A sophisticated warm brown/bronze */
+    --secondary-color: #D4AF37; /* Soft Gold accent */
+    --text-dark: #333333;
+    --text-light: #f8f8f8;
+    --background-light: #ffffff;
+    --background-page: #fdf9f6; /* Very light beige/off-white */
+    --border-color: #e0e0e0;
+    --error-color: #d9534f;
+    --success-color: #5cb85c;
+
+    --font-primary: 'Poppins', sans-serif;
+    --font-headings: 'Playfair Display', serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px; /* Base font size */
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--background-page);
+    color: var(--text-dark);
+    line-height: 1.6;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    /* Optional: Add a subtle background image */
+    /* background-image: url('images/wedding-background-subtle.jpg'); */
+    /* background-size: cover; */
+    /* background-position: center; */
+}
+
+.login-page-wrapper {
+    position: relative; /* For potential overlay/background elements */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Padding for smaller screens */
+}
+
+/* --- Login Container --- */
+.login-container {
+    background-color: var(--background-light);
+    padding: 2.5rem 3rem; /* Generous padding */
+    border-radius: 15px; /* Softer rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px; /* Max width for the form box */
+    text-align: center;
+    z-index: 1; /* Ensure it's above any background elements */
+    border-top: 5px solid var(--primary-color); /* Accent border */
+}
+
+/* --- Header --- */
+.login-header {
+    margin-bottom: 1.5rem;
+}
+
+.logo {
+    max-width: 150px; /* Adjust as needed */
+    margin-bottom: 0.5rem;
+}
+
+.brand-title {
+    font-family: var(--font-headings);
+    font-size: 2.5rem; /* Larger, elegant title */
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+
+.tagline {
+    font-size: 0.95rem;
+    color: #777;
+    font-weight: 300;
+}
+
+/* --- Login Form --- */
+.login-form h2 {
+    font-family: var(--font-primary);
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+}
+
+.input-group {
+    position: relative; /* Needed for absolute positioning icon */
+    margin-bottom: 1.5rem;
+}
+
+.input-group .input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.input-group input[type="email"],
+.input-group input[type="password"] {
+    width: 100%;
+    padding: 12px 15px 12px 40px; /* Left padding for icon */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: var(--font-primary);
+    transition: border-color 0.3s ease;
+}
+
+.input-group input[type="email"]:focus,
+.input-group input[type="password"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(139, 94, 60, 0.2); /* Subtle focus ring */
+}
+
+/* Screen Reader Only Label - for accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+
+/* --- Form Options (Remember Me / Forgot Password) --- */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #555;
+}
+
+.remember-me input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: var(--primary-color); /* Style checkbox */
+}
+
+.forgot-password {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+    color: var(--secondary-color);
+}
+
+/* --- Login Button --- */
+.btn-login {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-color);
+    color: var(--background-light);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    letter-spacing: 0.5px;
+}
+
+.btn-login:hover {
+    background-color: #7a502e; /* Darker shade on hover */
+}
+
+.btn-login:active {
+    transform: scale(0.98); /* Slight press effect */
+}
+
+/* --- Sign Up Prompt --- */
+.signup-prompt {
+    margin-top: 2rem;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.signup-prompt a {
+    color: var(--primary-color);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.signup-prompt a:hover {
+    text-decoration: underline;
+    color: var(--secondary-color);
+}
+
+/* --- Alternative Login (Social Icons) --- */
+.alternative-login {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.alternative-login p {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Spacing between icons */
+}
+
+.social-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: opacity 0.3s ease;
+}
+
+.social-icon:hover {
+    opacity: 0.85;
+}
+
+.social-icon.google { background-color: #DB4437; }
+.social-icon.facebook { background-color: #4267B2; }
+/* Add more colors for other providers if needed */
+
+
+/* --- Optional Background Overlay --- */
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Example: Subtle gradient overlay */
+    /* background: linear-gradient(to bottom right, rgba(253, 249, 246, 0.6), rgba(139, 94, 60, 0.2)); */
+    z-index: 0;
+    pointer-events: none; /* Allow clicks to go through */
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 2rem 1.5rem;
+    }
+    .brand-title {
+        font-size: 2rem;
+    }
+    .login-form h2 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        border-radius: 10px;
+        padding: 1.5rem 1rem;
+        border-top-width: 4px;
+    }
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px; /* Add space between elements when stacked */
+    }
+    .forgot-password {
+        align-self: flex-end; /* Keep forgot password to the right */
+    }
+    .social-icons {
+        gap: 10px;
+    }
+    .social-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+}

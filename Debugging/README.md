@@ -2,43 +2,43 @@
 Since macOS uses Clang instead of GCC, use:
 
 
-clang -Wall -Wextra -Wpedantic -Werror my_program.c -o my_program
+# clang -Wall -Wextra -Wpedantic -Werror my_program.c -o my_program
 This will catch more potential bugs.
 
-2. Install and Use Static Analysis Tools
+# 2. Install and Use Static Analysis Tools
 cppcheck (Static Code Analysis)
 Install it using Homebrew:
 
 
-brew install cppcheck
+# brew install cppcheck
 Then run:
 
-cppcheck --enable=all my_program.c
+# cppcheck --enable=all my_program.c
 Clang Static Analyzer
 
-scan-build clang my_program.c
+# scan-build clang my_program.c
 3. Use a Debugger (LLDB instead of GDB)
 macOS comes with LLDB instead of GDB:
 
 
-clang -g my_program.c -o my_program
+# clang -g my_program.c -o my_program
 lldb ./my_program
 Then inside LLDB:
 
 sh
 
-4. Detect Memory Errors (Valgrind Alternative)
+# 4. Detect Memory Errors (Valgrind Alternative)
 Valgrind doesn’t work well on macOS, so use leaks or AddressSanitizer:
 
 Using leaks (Built-in)
 Run:
 
 
-leaks -atExit -- ./my_program
+# leaks -atExit -- ./my_program
 Using AddressSanitizer
 Compile with:
 
-clang -fsanitize=address -g my_program.c -o my_program
+# clang -fsanitize=address -g my_program.c -o my_program
 Then run:
 
 
